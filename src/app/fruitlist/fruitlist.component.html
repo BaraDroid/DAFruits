@@ -2,7 +2,7 @@
     @for(item of fruitlist; track item.name){
         <section class="singleFruitBox">
             <div>
-                <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
+                <img src="assets/img/fruits/{{item.img}}" alt="" srcset="">
             </div>
             <div>
                 <h2> {{item.name}}</h2>
@@ -10,22 +10,22 @@
                     <p><b>Bewertung:</b></p>
                     <div>
 
-                        @for(count of [0, 1, 2, 3, 4, 5]; track fruitlist){
+                        @for(count of [0, 1, 2, 3, 4, 5]; track count){ 
                             @if(item.stars >= count){
                                 <img src="assets/img/stars/star.svg" alt="" srcset="">
                             } @else if (item.stars >= count - 0.5) {
-                                <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
+                                <img src="assets/img/stars/star-half.svg" alt="" srcset="">
                             } @else () {
-                                <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                                <img src="assets/img/stars/star-empty.svg" alt="" srcset="">
                             }
                         }
 
-                        <!-- <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                        <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                        <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                        <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
-                        <img src="./assets/img/stars/star-empty.svg" alt="" srcset=""> -->
-                        <p>({{item.stars}})</p>
+                        <!-- <img src="assets/img/stars/star.svg" alt="" srcset="">
+                        <img src="assets/img/stars/star.svg" alt="" srcset="">
+                        <img src="assets/img/stars/star.svg" alt="" srcset="">
+                        <img src="assets/img/stars/star-half.svg" alt="" srcset="">
+                        <img src="assets/img/stars/star-empty.svg" alt="" srcset=""> -->
+                        <p [ngStyle]="{color: item.stars > 3 ? fontColorgood : fontColorbad }" >({{item.stars}})</p>
                     </div>
                 </div>
                 <div><b>Art:</b><br>{{item.genus}}</div>
@@ -39,7 +39,7 @@
                         }
                         
                     </div>
-                    <div><input type="text"><button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
+                    <div><input type="text"><button><img src="assets/img/arrow-35-32.png" alt="" srcset=""></button>
                     </div>
                 </div>
             </div>
